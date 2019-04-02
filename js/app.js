@@ -63,6 +63,7 @@ const game = {
     interval = window.setInterval(function() {
       setTime += 1;
       $time.text(`Timer: ${setTime} s`);
+      // the time interval counts
       for (let him in newTamagotchi.life) {
         if (setTime % newTamagotchi.life[him]["scale"] === 0) {
           newTamagotchi[him] += 1;

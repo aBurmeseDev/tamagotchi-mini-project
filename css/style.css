@@ -49,6 +49,7 @@ h2 {
   border-radius: 30%;
   margin-bottom: 15px;
   margin-top: 25px;
+  box-shadow: 4px 6px 5px 0px rgba(0, 0, 0, 0.75);
 }
 .gameStart:hover {
   background-color: red;
@@ -56,6 +57,7 @@ h2 {
   border: none;
 }
 .play {
+  font-size: 15px;
   color: #000000;
   display: flex;
   margin: 0 auto;
@@ -67,6 +69,7 @@ h2 {
 }
 
 .food {
+  font-size: 15px;
   color: #ffffff;
   display: flex;
   margin: 0 auto;
@@ -77,6 +80,7 @@ h2 {
   background-color: rgb(252, 13, 13);
 }
 .lightToggleOff {
+  font-size: 15px;
   color: #ffffff;
   display: flex;
   margin: 0 auto;
@@ -87,6 +91,7 @@ h2 {
   background-color: rgb(8, 189, 8);
 }
 .lightToggleOn {
+  font-size: 15px;
   color: #ffffff;
   display: flex;
   margin: 0 auto;
@@ -100,4 +105,22 @@ h2 {
   display: flex;
   float: right;
   margin: 20px 40px;
+}
+#anime {
+  width: 30px;
+  height: 5px;
+  margin: 12px 0;
+  background: red;
+  position: relative;
+  animation: count 15s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes count {
+  from {
+    left: 20px;
+  }
+  to {
+    left: 1200px;
+  }
 }
