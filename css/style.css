@@ -1,0 +1,103 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  /* background-image: url(img/background1.jpg);
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten; */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+html {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+}
+h2 {
+  color: #102997;
+  font-size: 22px;
+  display: inline-block;
+  margin: 12px 70px;
+  padding: 5px 20px;
+}
+.display {
+  text-align: center;
+}
+.logo {
+  display: flex;
+  width: 350px;
+  height: 100px;
+  margin: 0 auto;
+  border-bottom: 3px solid black;
+  margin-top: 15px;
+}
+.welcome {
+  width: 320px;
+  height: 320px;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 12px;
+  margin-top: 25px;
+}
+
+.gameStart {
+  font-size: 20px;
+  display: flex;
+  margin: 0 auto;
+  padding: 12px 32px;
+  border: 2px solid red;
+  border-radius: 30%;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+.gameStart:hover {
+  background-color: red;
+  color: #ffffff;
+  border: none;
+}
+.play {
+  color: #000000;
+  display: flex;
+  margin: 0 auto;
+  border: 3px solid #fffb1b;
+  margin-top: 15px;
+  border-radius: 10%;
+  padding: 10px 20px;
+  background-color: #fffb1b;
+}
+
+.food {
+  color: #ffffff;
+  display: flex;
+  margin: 0 auto;
+  border: 2px solid red;
+  margin-top: 15px;
+  border-radius: 10%;
+  padding: 10px 18px;
+  background-color: rgb(252, 13, 13);
+}
+.lightToggleOff {
+  color: #ffffff;
+  display: flex;
+  margin: 0 auto;
+  border: 2px solid rgb(8, 189, 8);
+  margin-top: 15px;
+  border-radius: 10%;
+  padding: 10px 18px;
+  background-color: rgb(8, 189, 8);
+}
+.lightToggleOn {
+  color: #ffffff;
+  display: flex;
+  margin: 0 auto;
+  border: 2px solid rgb(3, 152, 238);
+  margin-top: 15px;
+  border-radius: 10%;
+  padding: 10px 18px;
+  background-color: rgb(3, 152, 238);
+}
+#time {
+  display: flex;
+  float: right;
+  margin: 20px 40px;
+}
