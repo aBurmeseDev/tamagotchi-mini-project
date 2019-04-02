@@ -11,15 +11,15 @@ class Tamagotchi {
     this.life = {
       hunger: {
         // Set the difficulty of the game
-        scale: getRandomScale(2, 5)
+        scale: getRandomScale(0, 3)
       },
       sleepiness: {
         // Set the difficulty of the game
-        scale: getRandomScale(2, 5)
+        scale: getRandomScale(2, 7)
       },
       boredom: {
         // Set the difficulty of the game
-        scale: getRandomScale(1, 5)
+        scale: getRandomScale(5, 10)
       },
       age: {
         scale: 20
@@ -30,8 +30,6 @@ class Tamagotchi {
 const getRandomScale = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min);
 };
-
-//
 
 const $time = $("#time");
 const $name = $(".name");
@@ -56,7 +54,7 @@ const game = {
     clearInterval(interval);
     setTime = 0;
     // console.log(newTamagotchi);
-    game.setTimer(1000);
+    game.setTimer();
     game.render();
   },
   setTimer() {
@@ -73,7 +71,7 @@ const game = {
     }, 1000);
   },
   render() {
-    $name.text(`'${newTamagotchi.name}'`);
+    $name.text(`"${newTamagotchi.name}"`);
     $age.text(`Age: ${newTamagotchi.age}`);
     $hunger.text(`Hunger: ${newTamagotchi.hunger}/10`);
     $sleepiness.text(`Sleepiness: ${newTamagotchi.sleepiness}/10`);
@@ -124,12 +122,21 @@ const game = {
     $("#time").css("color", "#ffffff");
   },
   death() {
-    clearInterval(interval);
-    newTamagotchi.status = "dead";
-    alert("Your Tamagotchi has died!");
+    if (newTamagotchi.boredom >= 10) {
+      clearInterval(interval);
+      newTamagotchi.status = "dead";
+      alert("Your Tamagotchi has died from boredom!");
+    } else if (newTamagotchi.sleepiness >= 10) {
+      clearInterval(interval);
+      newTamagotchi.status = "dead";
+      alert("Your Tamagotchi has died from lack of sleepiness!");
+    } else if (newTamagotchi.hunger >= 10) {
+      clearInterval(interval);
+      newTamagotchi.status = "dead";
+      alert("Your Tamagotchi has died from hunger!");
+    }
   }
 };
-
 // Buttons click
 $(".gameStart").on("click", game.init);
 // Feed me click
