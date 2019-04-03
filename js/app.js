@@ -48,9 +48,15 @@ var setTime = 0;
 // console.log(newTamagotchi.life);
 const game = {
   init() {
+    // Image change
+    $(".welcome").attr(
+      "src",
+      "https://media.giphy.com/media/ENrhGhuwksLss/giphy.gif"
+    );
+    // User name input
     var getName = prompt("What would you like to name your tamagotchi?");
-
     newTamagotchi = new Tamagotchi(getName);
+    // Time reset
     clearInterval(interval);
     setTime = 0;
     // console.log(newTamagotchi);
@@ -71,7 +77,7 @@ const game = {
     }, 1000);
   },
   render() {
-    $name.text(`"${newTamagotchi.name}"`);
+    $name.text(`"${newTamagotchi.name.toUpperCase()}"`);
     $age.text(`Age: ${newTamagotchi.age}`);
     $hunger.text(`Hunger: ${newTamagotchi.hunger}/10`);
     $sleepiness.text(`Sleepiness: ${newTamagotchi.sleepiness}/10`);
@@ -152,4 +158,15 @@ $(".lightToggleOn").on("click", () => {
     "src",
     "https://media.giphy.com/media/pdcEBvl3aokms/giphy.gif"
   );
+  if (newTamagotchi.age > 2) {
+    $(".welcome").attr(
+      "src",
+      "https://media.giphy.com/media/l2QDTsTL2NhwOEAV2/source.gif"
+    );
+  } else if (newTamagotchi.age > 3) {
+    $(".welcome").attr(
+      "src",
+      "https://media.giphy.com/media/l2QDTsTL2NhwOEAV2/source.gif"
+    );
+  }
 });
